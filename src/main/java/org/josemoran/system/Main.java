@@ -1,5 +1,6 @@
 package org.josemoran.system;
 
+import org.josemoran.controller.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +9,9 @@ import javafx.stage.Stage;
 import org.json.JSONObject;
 
 public class Main extends Application{
-
+    private Stage stage;
+    private static String URL_VIEW = "/view/";
+    
     public static void main(String[] args) {
 //        JSONObject persona = new JSONObject();
 //        
@@ -26,11 +29,32 @@ public class Main extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader cargador = new FXMLLoader(getClass().getResource(
-                "/view/InicioView.fxml"));
-        Parent raiz = cargador.load();
-        Scene escena = new Scene(raiz);
-        stage.setScene(escena);
+        this.stage = stage;
+        inicio();
+//        FXMLLoader cargador = new FXMLLoader(getClass().getResource(
+//                "/view/InicioView.fxml"));
+//        Parent raiz = cargador.load();
+//        Scene escena = new Scene(raiz);
+//        stage.setScene(escena);
         stage.show();
+    }
+    
+        public FXMLLoader cambiarEscena(String fxml, double ancho, double alto){
+            FXMLLoader cargadorFXML = null;
+        try {
+            cargadorFXML = new FXMLLoader(getClass().getResource(URL_VIEW+fxml));
+            Parent archivoFXML = cargadorFXML.load();
+            Scene escena = new Scene(archivoFXML,ancho,alto);
+            stage.setScene(escena);
+        } catch (Exception ex) {
+            System.out.println("Error al cambiar: "+ ex.getMessage());
+            ex.printStackTrace();
+        }
+        return cargadorFXML;
+    }
+        
+    public void inicio(){
+        InicioController inCon = cambiarEscena("PantalladeInicioView.fxml",600,400).getController();
+        inCon.setPrincipal(this);
     }
 }

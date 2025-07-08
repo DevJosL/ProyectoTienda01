@@ -7,6 +7,7 @@ package org.josemoran.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import org.josemoran.system.Main;
 
 /**
  * FXML Controller class
@@ -14,10 +15,12 @@ import javafx.fxml.Initializable;
  * @author informatica
  */
 public class InicioController implements Initializable {
+    private Main principal;
 
-    /**
-     * Initializes the controller class.
-     */
+    public void setPrincipal(Main principal) {
+        this.principal = principal;
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

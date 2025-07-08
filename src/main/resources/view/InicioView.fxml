@@ -10,7 +10,7 @@
         <URL value="@inicioview.css" />
     </stylesheets>
    <children>
-      <Text layoutX="289.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENTAS" />
+      <Text layoutX="279.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENTAS" />
       <Button layoutX="163.0" layoutY="172.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="275.0" text="iniciatr" />
    </children>
 </AnchorPane>
