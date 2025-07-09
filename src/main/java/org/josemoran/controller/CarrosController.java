@@ -12,17 +12,17 @@ import org.josemoran.system.Main;
 /**
  * FXML Controller class
  *
- * @author informatica
+ * @author josel
  */
-public class InicioController implements Initializable {
+public class CarrosController implements Initializable {
     private Main principal;
 
     public void setPrincipal(Main principal) {
         this.principal = principal;
     }
     
-    public void CambioCarros(){
-        principal.CarrosScene();
+    public void Cambioinicio(){
+        principal.inicio();
     }
     
     @Override

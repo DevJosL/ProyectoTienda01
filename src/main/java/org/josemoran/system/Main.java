@@ -54,7 +54,12 @@ public class Main extends Application{
     }
         
     public void inicio(){
-        InicioController inCon = cambiarEscena("PantalladeInicioView.fxml",600,400).getController();
-        inCon.setPrincipal(this);
+        InicioController ic = cambiarEscena("InicioView.fxml",600,400).getController();
+        ic.setPrincipal(this);
+    }
+    
+    public void CarrosScene(){
+        CarrosController cc = cambiarEscena("CarrosView.fxml", 900, 700).getController();
+        cc.setPrincipal(this);
     }
 }
