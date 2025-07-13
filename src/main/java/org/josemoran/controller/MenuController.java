@@ -12,22 +12,42 @@ import org.josemoran.system.Main;
 /**
  * FXML Controller class
  *
- * @author informatica
+ * @author josel
  */
-public class InicioController implements Initializable {
+public class MenuController implements Initializable {
     private Main principal;
 
     public void setPrincipal(Main principal) {
         this.principal = principal;
     }
     
-    public void inicioSesion(){
-        principal.InicioSesionScene();
+    public void Volver(){
+        principal.inicio();
     }
     
-//    public void CambioCarros(){
-//        principal.CarrosScene();
-//    }
+    public void UsuariosView(){
+        principal.UsuariosScene();
+    }
+    
+    public void CategoriasView(){
+        principal.CategoriaScene();
+    }
+    
+    public void ProveedoresView(){
+        principal.ProveedorScene();
+    }
+    
+    public void CarrosView(){
+        principal.CarrosScene();
+    }
+    
+    public void FacturasView(){
+        principal.FacturaScene();
+    }
+    
+    public void DetallesFacturasView(){
+        principal.DetalleScene();
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

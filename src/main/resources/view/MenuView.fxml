@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="700.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.josemoran.controller.MenuController">
+    <stylesheets>
+        <URL value="@menuview.css" />
+    </stylesheets>
+   <children>
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="573.0" prefWidth="673.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="140.0" minWidth="0.0" prefWidth="72.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="645.0" minWidth="10.0" prefWidth="564.39990234375" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="140.0" minWidth="0.0" prefWidth="72.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="100.0" minHeight="3.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="100.0" minHeight="3.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="100.0" minHeight="3.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="100.0" minHeight="3.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="100.0" minHeight="3.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="100.0" minHeight="3.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="100.0" minHeight="3.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#UsuariosView" prefHeight="60.0" prefWidth="205.0" text="USUARIOS" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Italic" size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#CategoriasView" prefHeight="60.0" prefWidth="205.0" text="CATEGORIAS" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Italic" size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ProveedoresView" prefHeight="60.0" prefWidth="205.0" text="PROVEEDORES" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Italic" size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#CarrosView" prefHeight="60.0" prefWidth="205.0" text="CARROS" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Italic" size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#FacturasView" prefHeight="60.0" prefWidth="205.0" text="FACTURAS" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Italic" size="17.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#DetallesFacturasView" prefHeight="60.0" prefWidth="205.0" text="DETALLES FACTURAS" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Italic" size="17.0" />
+               </font>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="¡Bienvenido!&#10;Selecciona la opcion que deseas." textAlignment="CENTER" wrappingWidth="304.365234375" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button mnemonicParsing="false" onAction="#Volver" prefHeight="25.0" prefWidth="68.0" text="Volver" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

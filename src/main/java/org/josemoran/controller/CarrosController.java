@@ -43,7 +43,7 @@ public class CarrosController implements Initializable {
     }
     
     public void Cambioinicio(){
-        principal.inicio();
+        principal.MenuScene();
     }
     
     @Override

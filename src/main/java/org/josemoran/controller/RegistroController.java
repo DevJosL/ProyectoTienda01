@@ -12,22 +12,14 @@ import org.josemoran.system.Main;
 /**
  * FXML Controller class
  *
- * @author informatica
+ * @author josel
  */
-public class InicioController implements Initializable {
+public class RegistroController implements Initializable {
     private Main principal;
 
     public void setPrincipal(Main principal) {
         this.principal = principal;
     }
-    
-    public void inicioSesion(){
-        principal.InicioSesionScene();
-    }
-    
-//    public void CambioCarros(){
-//        principal.CarrosScene();
-//    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

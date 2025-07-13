@@ -16,7 +16,7 @@ public class Conexion {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     
     public Conexion(){
-        
+        conectar();
     }
     
     public void conectar(){
@@ -26,7 +26,8 @@ public class Conexion {
             System.out.println("Conexion realizada con exito");
         } catch(ClassNotFoundException | InstantiationException
                 |IllegalAccessException | SQLException ex) {
-            System.out.println("Error al conectar");
+            System.out.println("Error al conectar" + ex.getMessage());
+            ex.printStackTrace();
         }
     }
     

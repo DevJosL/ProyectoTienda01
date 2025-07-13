@@ -13,7 +13,6 @@ import java.sql.Connection;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,10 +26,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 
 /**
  * FXML Controller class
@@ -67,6 +62,10 @@ public class UsuariosController implements Initializable {
 
     public void setPrincipal(Main principal) {
         this.principal = principal;
+    }
+
+    public void volver() {
+        principal.MenuScene();
     }
 
     @Override
@@ -115,12 +114,12 @@ public class UsuariosController implements Initializable {
             ResultSet resultado = enunciado.executeQuery();
 
             while (resultado.next()) {
-                usuario.add(new Usuarios(resultado.getInt(1), 
-                        resultado.getString(2), 
-                        resultado.getString(3), 
-                        resultado.getString(4), 
-                        resultado.getString(5), 
-                        resultado.getString(6), 
+                usuario.add(new Usuarios(resultado.getInt(1),
+                        resultado.getString(2),
+                        resultado.getString(3),
+                        resultado.getString(4),
+                        resultado.getString(5),
+                        resultado.getString(6),
                         resultado.getString(7)));
             }
         } catch (SQLException ex) {
@@ -143,13 +142,13 @@ public class UsuariosController implements Initializable {
         String contrasena = txtContrasena.getText();
         String telefono = txtTelefono.getText();
         String direccion = txtDireccion.getText();
-        Usuarios usuario = new Usuarios(idUser, nombre, apellido, 
-                correo, contrasena, telefono, 
+        Usuarios usuario = new Usuarios(idUser, nombre, apellido,
+                correo, contrasena, telefono,
                 direccion);
         return usuario;
     }
-    
-    public void agregarUsuario(){
+
+    public void agregarUsuario() {
         modeloUsuario = obtenerModeloUsuarios();
         try {
             CallableStatement enunciado = Conexion.getInstancia().getConexion()
@@ -167,8 +166,8 @@ public class UsuariosController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    public void actualizarUsuario(){
+
+    public void actualizarUsuario() {
         modeloUsuario = obtenerModeloUsuarios();
         try {
             CallableStatement enunciado = Conexion.getInstancia().getConexion()
@@ -187,8 +186,8 @@ public class UsuariosController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    public void eliminarUsuario(){
+
+    public void eliminarUsuario() {
         modeloUsuario = obtenerModeloUsuarios();
         try {
             CallableStatement enunciado = Conexion.getInstancia().getConexion()
@@ -200,100 +199,109 @@ public class UsuariosController implements Initializable {
             System.out.println("Error al eliminar " + e.getMessage());
         }
     }
-    
-    public void limpiarFormulario(){
-        txtId.clear(); txtNombre.clear(); txtApellido.clear();
-        txtCorreo.clear(); txtContrasena.clear(); txtTelefono.clear();
+
+    public void limpiarFormulario() {
+        txtId.clear();
+        txtNombre.clear();
+        txtApellido.clear();
+        txtCorreo.clear();
+        txtContrasena.clear();
+        txtTelefono.clear();
         txtDireccion.clear();
     }
-    
-    public void estadoFormulario(EstadoFormulario est){
+
+    public void estadoFormulario(EstadoFormulario est) {
         estadoActual = est;
         boolean activo = (est == EstadoFormulario.AGREGAR || est == EstadoFormulario.EDITAR);
-        
+
         txtNombre.setDisable(!activo);
         txtApellido.setDisable(!activo);
         txtCorreo.setDisable(!activo);
         txtTelefono.setDisable(!activo);
         txtDireccion.setDisable(!activo);
-        btnGuardar.setDisable(!activo);
-        btnCancelar.setDisable(!activo);
-        
+        btnGuardar.setVisible(activo);
+        btnCancelar.setVisible(activo);
+
         tablaUsuarios.setDisable(activo);
         btnBuscar.setDisable(activo);
         txtBuscar.setDisable(activo);
-        
+
         btnVolver.setDisable(activo);
+        btnEditar.setDisable(activo);
         btnAnterior.setDisable(activo);
         btnSiguiente.setDisable(activo);
         btnNuevo.setDisable(activo);
         btnEliminar.setDisable(activo);
         btnVolver.setDisable(activo);
     }
-    
+
     @FXML
-    private void btnAnteriorAction(){
+    private void btnAnteriorAction() {
         int indice = tablaUsuarios.getSelectionModel().getSelectedIndex();
         if (indice > 0) {
-            tablaUsuarios.getSelectionModel().select(indice -1);
+            tablaUsuarios.getSelectionModel().select(indice - 1);
             cargarEnTextoField();
         }
     }
-    
-   @FXML
-    private void btnSiguienteAction(){
-        int indice = tablaUsuarios.getSelectionModel().getSelectedIndex();
-        if (indice < listaUsuarios.size() -1) {
-            tablaUsuarios.getSelectionModel().select(indice +1);
-            cargarEnTextoField();
-        }
-    }
-    
+
     @FXML
-    private void btnAgregarAction(){
+    private void btnSiguienteAction() {
+        int indice = tablaUsuarios.getSelectionModel().getSelectedIndex();
+        if (indice < listaUsuarios.size() - 1) {
+            tablaUsuarios.getSelectionModel().select(indice + 1);
+            cargarEnTextoField();
+        }
+    }
+
+    @FXML
+    private void btnAgregarAction() {
         limpiarFormulario();
         estadoActual = EstadoFormulario.AGREGAR;
         estadoFormulario(estadoActual);
     }
-    
+
     @FXML
-    private void btnEditarAction(){
+    private void btnEditarAction() {
         estadoActual = EstadoFormulario.EDITAR;
         estadoFormulario(estadoActual);
     }
-    
+
     @FXML
-    private void btnEliminarAction(){
+    private void btnEliminarAction() {
         eliminarUsuario();
     }
-    
+
     @FXML
-    private void btnCancelarAction(){
+    private void btnCancelarAction() {
         if (tablaUsuarios.getSelectionModel().getSelectedItem() != null) {
             cargarEnTextoField();
         }
         estadoActual = EstadoFormulario.NINGUNO;
         estadoFormulario(estadoActual);
     }
-    
+
     @FXML
-    private void btnGuardarAction(){
+    private void btnGuardarAction() {
         if (estadoActual == EstadoFormulario.AGREGAR) {
             agregarUsuario();
             estadoActual = EstadoFormulario.NINGUNO;
-        } else if(estadoActual == EstadoFormulario.EDITAR){
+        } else if (estadoActual == EstadoFormulario.EDITAR) {
             actualizarUsuario();
             estadoActual = EstadoFormulario.NINGUNO;
         }
         estadoFormulario(estadoActual);
     }
-    
+
     @FXML
-    private void BuscarTabla(){
+    private void BuscarTabla() {
         ArrayList<Usuarios> resultadoBusqueda = new ArrayList<>();
+        String nombre = txtBuscar.getText();
+        String apellido = txtBuscar.getText();
         String id = txtBuscar.getText();
         for (Usuarios usu : listaUsuarios) {
-            if (String.valueOf(usu.getIdUser()).toLowerCase().contains(id.toLowerCase())) {
+            if (String.valueOf(usu.getNombre()).toLowerCase().contains(nombre.toLowerCase())
+                    || String.valueOf(usu.getApellido()).toLowerCase().contains(apellido.toLowerCase())
+                    || String.valueOf(usu.getIdUser()).toLowerCase().contains(id.toLowerCase())) {
                 resultadoBusqueda.add(usu);
             }
         }

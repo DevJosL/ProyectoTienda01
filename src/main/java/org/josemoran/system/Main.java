@@ -62,4 +62,42 @@ public class Main extends Application{
         CarrosController cc = cambiarEscena("CarrosView.fxml", 900, 700).getController();
         cc.setPrincipal(this);
     }
+    
+    public void InicioSesionScene(){
+        InicioSesionController isc = cambiarEscena("InicioSesionView.fxml", 800, 650).getController();
+        isc.setPrincipal(this);
+    }
+    
+    public void UsuariosScene(){
+        UsuariosController usuc = cambiarEscena("UsuariosView.fxml", 900, 700).getController();
+        usuc.setPrincipal(this);
+    }
+    
+    public void RegistroScene(){
+        RegistroController rgc = cambiarEscena("RegistroView.fxml", 800, 650).getController();
+        rgc.setPrincipal(this);
+    }
+    
+    public void MenuScene(){
+        MenuController mc = cambiarEscena("MenuView.fxml", 700, 600).getController();
+        mc.setPrincipal(this);
+    }
+    
+    public void CategoriaScene(){
+        CategoriasController cc = cambiarEscena("CategoriasView.fxml", 900, 700).getController();
+        cc.setPrincipal(this);
+    }
+    
+    public void ProveedorScene(){
+        ProveedoresController prc = cambiarEscena("ProveedoresView.fxml", 900, 700).getController();
+        prc.setPrincipal(this);
+    }
+    
+    public void FacturaScene(){
+        
+    }
+    
+    public void DetalleScene(){
+        
+    }
 }
