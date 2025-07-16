@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
@@ -14,26 +13,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josemoran.controller.CarrosController">
-    <stylesheets>
-        <URL value="@/view/carrosview.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="fondo" stylesheets="@carrosview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josemoran.controller.CarrosController">
    <children>
-      <TableView layoutX="38.0" layoutY="80.0" prefHeight="311.0" prefWidth="824.0">
+      <TableView fx:id="tablaCarros" layoutX="38.0" layoutY="80.0" prefHeight="311.0" prefWidth="824.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="IDCarro" />
-            <TableColumn prefWidth="75.0" text="Marca" />
-            <TableColumn prefWidth="81.60003662109375" text="Modelo" />
-            <TableColumn prefWidth="81.5999755859375" text="Color" />
-            <TableColumn prefWidth="75.20001220703125" text="Año" />
-            <TableColumn prefWidth="92.80001831054688" text="Precio" />
-            <TableColumn prefWidth="181.5999755859375" text="Descripción" />
-            <TableColumn prefWidth="78.39996337890625" text="IDCategoria" />
-            <TableColumn prefWidth="84.7999267578125" text="IDProveedor" />
+          <TableColumn fx:id="colID" prefWidth="75.0" text="IDCarro" />
+            <TableColumn fx:id="colMarca" prefWidth="75.0" text="Marca" />
+            <TableColumn fx:id="colModelo" prefWidth="81.60003662109375" text="Modelo" />
+            <TableColumn fx:id="colColor" prefWidth="81.5999755859375" text="Color" />
+            <TableColumn fx:id="colAño" prefWidth="75.20001220703125" text="Año" />
+            <TableColumn fx:id="colPrecio" prefWidth="92.80001831054688" text="Precio" />
+            <TableColumn fx:id="colDescripcion" prefWidth="181.5999755859375" text="Descripción" />
+            <TableColumn fx:id="colCategoria" prefWidth="78.39996337890625" text="IDCategoria" />
+            <TableColumn fx:id="colProveedor" prefWidth="84.7999267578125" text="IDProveedor" />
         </columns>
       </TableView>
-      <Pane layoutX="-8.0" layoutY="-4.0" prefHeight="70.0" prefWidth="908.0" style="-fx-background-color: Grey;" />
-      <Text layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carros" wrappingWidth="100.53668212890625">
+      <Pane layoutX="-8.0" layoutY="-4.0" prefHeight="70.0" prefWidth="908.0" styleClass="pane" stylesheets="@carrosview.css" />
+      <Text fill="#f5f5f5" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carros" wrappingWidth="100.53668212890625">
          <font>
             <Font size="33.0" />
          </font>
@@ -56,13 +52,11 @@
           <RowConstraints maxHeight="52.600012207031256" minHeight="0.0" prefHeight="31.400000000000006" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="2" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="5" />
-            <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="txtColor" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="txtId" disable="true" GridPane.columnIndex="2" />
+            <TextField fx:id="txtAño" disable="true" GridPane.columnIndex="5" />
+            <TextField fx:id="txtPrecio" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <TextField fx:id="txtDescripcion" disable="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID Carro" GridPane.columnIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marca" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -72,8 +66,10 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción" GridPane.columnIndex="4" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IDCategoria" GridPane.columnIndex="4" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID Proveedor" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <ComboBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <ComboBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbxProveedor" disable="true" prefWidth="150.0" styleClass="cbx" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cbxCategoria" disable="true" prefWidth="150.0" styleClass="cbx" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <TextField fx:id="txtModelo" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txtMarca" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <GridPane layoutX="16.0" layoutY="384.0" prefHeight="78.0" prefWidth="868.0">
@@ -82,13 +78,14 @@
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="155.60000610351562" minWidth="10.0" prefWidth="19.6" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="155.60000610351562" minWidth="10.0" prefWidth="105.59997558593751" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="118.40001220703124" minWidth="10.0" prefWidth="101.8000244140625" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="88.19995117187497" minWidth="10.0" prefWidth="81.19999999999999" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="109.79998779296875" minWidth="10.0" prefWidth="107.4000244140625" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="101.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="109.79998779296875" minWidth="10.0" prefWidth="75.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="84.20003662109377" minWidth="10.0" prefWidth="19.39997558593751" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.20001220703125" minWidth="10.0" prefWidth="80.1999633789062" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="79.20001220703125" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="116.59992675781245" minWidth="10.0" prefWidth="80.79999999999995" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="209.20009765625002" minWidth="10.0" prefWidth="93.40007324218755" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.20001220703125" minWidth="10.0" prefWidth="105.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.20001220703125" minWidth="10.0" prefWidth="17.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="105.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="116.59992675781245" minWidth="10.0" prefWidth="29.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="209.20009765625002" minWidth="10.0" prefWidth="136.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="174.39990234375" minWidth="10.0" prefWidth="29.200000000000045" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="82.4000244140625" minWidth="10.0" prefWidth="46.0" />
         </columnConstraints>
@@ -98,25 +95,25 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" text="Nuevo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Eliminar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button disable="true" mnemonicParsing="false" text="Guardar" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Button disable="true" mnemonicParsing="false" text="Cancelar" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#Cambioinicio" prefHeight="30.0" prefWidth="71.0" text="Volver" GridPane.columnIndex="10" GridPane.rowIndex="1">
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" styleClass="botones" text="Nuevo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" styleClass="botones" text="Eliminar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" styleClass="botones" text="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="btnGuardar" disable="true" mnemonicParsing="false" onAction="#btnGuardarAction" styleClass="botones" text="Guardar" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Button fx:id="btnCancelar" disable="true" mnemonicParsing="false" onAction="#btnCancelarAction" styleClass="botones" text="Cancelar" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#volver" prefHeight="42.0" prefWidth="83.0" styleClass="botones" text="Volver" GridPane.columnIndex="11" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" text="&gt;&gt;" GridPane.columnIndex="12" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="&lt;&lt;" GridPane.rowIndex="1" />
+            <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#btnSiguienteAction" styleClass="botones" text="&gt;" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+            <Button fx:id="btnAnterior" mnemonicParsing="false" onAction="#btnAnteriorAction" styleClass="botones" text="&lt;" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <GridPane layoutX="581.0" layoutY="-1.0" prefHeight="70.0" prefWidth="306.0">
+      <GridPane layoutX="569.0" layoutY="-1.0" prefHeight="70.0" prefWidth="318.0">
         <columnConstraints>
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.7999267578125" minWidth="10.0" prefWidth="200.7999267578125" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="107.20001220703125" minWidth="10.0" prefWidth="23.2000732421875" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="209.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="107.20001220703125" minWidth="9.0" prefWidth="35.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="106.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="25.60001220703125" minHeight="10.0" prefHeight="15.199987792968749" vgrow="SOMETIMES" />
@@ -124,12 +121,12 @@
           <RowConstraints maxHeight="25.59995117187499" minHeight="10.0" prefHeight="15.999975585937506" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="71.0" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#BuscarTabla" prefHeight="42.0" prefWidth="84.0" styleClass="botones" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TextField GridPane.rowIndex="1" />
+            <TextField fx:id="txtBuscar" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

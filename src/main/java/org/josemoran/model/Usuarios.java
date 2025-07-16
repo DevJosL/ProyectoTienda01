@@ -6,11 +6,13 @@ package org.josemoran.model;
  */
 public class Usuarios {
     private int idUser;
-    private String nombre, apellido, correo, contrasena, telefono, direccion;
+    private String nombre, apellido, correo, contrasena, telefono, direccion; // Mantenemos 'direccion'
 
     public Usuarios() {
+        // Constructor vacío, útil para ciertos frameworks o deserialización
     }
 
+    // CONSTRUCTOR COMPLETO (7 parámetros) - Útil para UsuariosController
     public Usuarios(int idUser, String nombre, String apellido, String correo, String contrasena, String telefono, String direccion) {
         this.idUser = idUser;
         this.nombre = nombre;
@@ -21,6 +23,26 @@ public class Usuarios {
         this.direccion = direccion;
     }
 
+    // NUEVO CONSTRUCTOR (6 parámetros) - Útil para FacturasController
+    // Este constructor es el que FacturasController usará ahora
+    public Usuarios(int idUser, String nombre, String apellido, String correo, String contrasena, String telefono) {
+        this.idUser = idUser;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.contrasena = contrasena;
+        this.telefono = telefono;
+        this.direccion = null; // Inicializamos 'direccion' a null o a un valor por defecto si no se proporciona
+    }
+
+    // ELIMINA ESTE CONSTRUCTOR (el que tenía el "UnsupportedOperationException")
+    /*
+    public Usuarios(int aInt, String string, String string0, String string1, String string2, String string3) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    */
+
+    // --- Getters y Setters (mantener todos, incluida la direccion) ---
     public int getIdUser() {
         return idUser;
     }
