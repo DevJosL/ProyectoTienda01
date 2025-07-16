@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,10 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josemoran.controller.UsuariosController">
-    <stylesheets>
-        <URL value="@/view/usuariosview.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="fondo" stylesheets="@usuariosview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josemoran.controller.UsuariosController">
    <children>
       <TableView fx:id="tablaUsuarios" layoutX="46.0" layoutY="84.0" prefHeight="311.0" prefWidth="824.0">
          <columns>
@@ -29,8 +25,8 @@
             <TableColumn fx:id="colDirección" prefWidth="236.00006103515625" text="Dirección" />
          </columns>
       </TableView>
-      <Pane prefHeight="70.0" prefWidth="908.0" style="-fx-background-color: Grey;" />
-      <Text layoutX="18.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios" wrappingWidth="126.9366683959961">
+      <Pane prefHeight="70.0" prefWidth="908.0" styleClass="pane" />
+      <Text fill="WHITE" layoutX="18.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios" wrappingWidth="126.9366683959961">
          <font>
             <Font size="33.0" />
          </font>
@@ -78,12 +74,13 @@
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="88.19995117187497" minWidth="10.0" prefWidth="81.19999999999999" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="109.79998779296875" minWidth="10.0" prefWidth="107.4000244140625" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="84.20003662109377" minWidth="10.0" prefWidth="19.39997558593751" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.20001220703125" minWidth="10.0" prefWidth="80.1999633789062" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="79.20001220703125" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="116.59992675781245" minWidth="10.0" prefWidth="80.79999999999995" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="209.20009765625002" minWidth="10.0" prefWidth="93.40007324218755" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="174.39990234375" minWidth="10.0" prefWidth="29.200000000000045" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="82.4000244140625" minWidth="10.0" prefWidth="46.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.20001220703125" minWidth="10.0" prefWidth="124.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.20001220703125" minWidth="10.0" prefWidth="20.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="104.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="116.59992675781245" minWidth="8.0" prefWidth="8.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="209.20009765625002" minWidth="10.0" prefWidth="112.60007324218748" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="174.39990234375" minWidth="10.0" prefWidth="12.600000000000023" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="82.4000244140625" minWidth="10.0" prefWidth="61.39999999999998" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -91,25 +88,25 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnAgregarAction" text="Nuevo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" text="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarAction" text="Guardar" visible="false" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelarAction" text="Cancelar" visible="false" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#volver" prefHeight="30.0" prefWidth="71.0" text="Volver" GridPane.columnIndex="10" GridPane.rowIndex="1">
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnAgregarAction" styleClass="botones" text="Nuevo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" styleClass="botones" text="Eliminar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" styleClass="botones" text="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarAction" styleClass="botones" text="Guardar" visible="false" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelarAction" prefHeight="42.0" prefWidth="98.0" styleClass="botones" text="Cancelar" visible="false" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#volver" prefHeight="42.0" prefWidth="89.0" styleClass="botones" text="Volver" GridPane.columnIndex="11" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#btnSiguienteAction" text="&gt;&gt;" GridPane.columnIndex="12" GridPane.rowIndex="1" />
-            <Button fx:id="btnAnterior" mnemonicParsing="false" onAction="#btnAnteriorAction" text="&lt;&lt;" GridPane.rowIndex="1" />
+            <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#btnSiguienteAction" styleClass="botones" text="&gt;" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+            <Button fx:id="btnAnterior" mnemonicParsing="false" onAction="#btnAnteriorAction" styleClass="botones" text="&lt;" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <GridPane layoutX="589.0" layoutY="3.0" prefHeight="70.0" prefWidth="306.0">
+      <GridPane layoutX="558.0" layoutY="3.0" prefHeight="70.0" prefWidth="337.0">
          <columnConstraints>
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.7999267578125" minWidth="10.0" prefWidth="200.7999267578125" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="107.20001220703125" minWidth="10.0" prefWidth="23.2000732421875" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="217.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="107.20001220703125" minWidth="1.0" prefWidth="9.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="111.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints maxHeight="25.60001220703125" minHeight="10.0" prefHeight="15.199987792968749" vgrow="SOMETIMES" />
@@ -117,7 +114,7 @@
             <RowConstraints maxHeight="25.59995117187499" minHeight="10.0" prefHeight="15.999975585937506" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#BuscarTabla" prefHeight="30.0" prefWidth="71.0" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#BuscarTabla" prefHeight="42.0" prefWidth="87.0" styleClass="botones" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>

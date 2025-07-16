@@ -9,24 +9,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josemoran.controller.InicioSesionController">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="800.0" styleClass="fondo" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josemoran.controller.InicioSesionController">
     <stylesheets>
         <URL value="@iniciosesionview.css" />
     </stylesheets>
    <children>
-      <Pane prefHeight="650.0" prefWidth="417.0" style="-fx-background-color: grey;">
+      <Pane prefHeight="650.0" prefWidth="417.0" styleClass="pane" stylesheets="@iniciosesionview.css">
          <children>
-            <Text layoutX="90.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido a esta aplicación">
+            <Text fill="WHITE" layoutX="90.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido a esta aplicación">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
-            <Text layoutX="173.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Porfavor">
+            <Text fill="WHITE" layoutX="173.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Porfavor">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
-            <Text layoutX="73.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="inicia sesión para poder ingresar">
+            <Text fill="WHITE" layoutX="73.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="inicia sesión para poder ingresar">
                <font>
                   <Font size="19.0" />
                </font>
@@ -49,13 +49,13 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="713.0" layoutY="83.0" mnemonicParsing="false" onAction="#Volver" prefHeight="27.0" prefWidth="67.0" text="Volver" />
-      <Button layoutX="646.0" layoutY="83.0" mnemonicParsing="false" onAction="#RegistroView" prefHeight="27.0" prefWidth="67.0" text="Registro" />
-      <Button layoutX="659.0" layoutY="432.0" mnemonicParsing="false" onAction="#ingresar" prefHeight="37.0" prefWidth="106.0" text="Ingresar" />
-      <PasswordField fx:id="pssContraseña" layoutX="472.0" layoutY="334.0" prefHeight="26.0" prefWidth="268.0" />
-      <Text fx:id="txtError" fill="RED" layoutX="514.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATOS INCORRECTOS" visible="false">
+      <Button layoutX="689.0" layoutY="83.0" mnemonicParsing="false" onAction="#Volver" prefHeight="42.0" prefWidth="91.0" styleClass="botones" text="Volver" />
+      <Button layoutX="575.0" layoutY="83.0" mnemonicParsing="false" onAction="#RegistroView" prefHeight="42.0" prefWidth="97.0" styleClass="botones" text="Registro" />
+      <Button layoutX="659.0" layoutY="432.0" mnemonicParsing="false" onAction="#ingresar" prefHeight="37.0" prefWidth="106.0" styleClass="botones" text="Ingresar" />
+      <PasswordField fx:id="pssContraseña" layoutX="471.0" layoutY="333.0" prefHeight="26.0" prefWidth="268.0" />
+      <Text fx:id="txtError" fill="RED" layoutX="487.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¡ERROR! DATOS INCORRECTOS" visible="false">
          <font>
-            <Font size="16.0" />
+            <Font size="17.0" />
          </font>
       </Text>
    </children>

@@ -22,6 +22,11 @@ public class Proveedores {
         this.direccion = direccion;
     }
 
+    public Proveedores(int idProveedor, String nombre) {
+        this.id = idProveedor;
+        this.nombre = nombre;
+    }
+
     public int getId() {
         return id;
     }

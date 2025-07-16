@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josemoran.controller.CategoriasController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="fondo" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josemoran.controller.CategoriasController">
     <stylesheets>
         <URL value="@categoriasview.css" />
     </stylesheets>
@@ -24,7 +24,7 @@
             <TableColumn fx:id="colNombre" prefWidth="422.4000244140625" text="Nombre" />
          </columns>
       </TableView>
-      <Pane prefHeight="70.0" prefWidth="908.0" style="-fx-background-color: Grey;" />
+      <Pane prefHeight="70.0" prefWidth="908.0" styleClass="pane" />
       <Text layoutX="18.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorias" wrappingWidth="160.5366439819336">
          <font>
             <Font size="33.0" />
@@ -77,18 +77,18 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnAgregarAction" text="Nuevo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" text="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnAgregarAction" styleClass="botones" text="Nuevo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" styleClass="botones" text="Eliminar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" styleClass="botones" text="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarAction" text="Guardar" visible="false" GridPane.columnIndex="8" GridPane.rowIndex="1" />
             <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelarAction" text="Cancelar" visible="false" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#Volver" prefHeight="30.0" prefWidth="71.0" text="Volver" GridPane.columnIndex="10" GridPane.rowIndex="1">
+            <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#Volver" prefHeight="42.0" prefWidth="85.0" styleClass="botones" text="Volver" GridPane.columnIndex="10" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#btnSiguienteAction" text="&gt;&gt;" GridPane.columnIndex="12" GridPane.rowIndex="1" />
-            <Button fx:id="btnAnterior" mnemonicParsing="false" onAction="#btnAnteriorAction" text="&lt;&lt;" GridPane.rowIndex="1" />
+            <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#btnSiguienteAction" styleClass="botones" text="»" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+            <Button fx:id="btnAnterior" mnemonicParsing="false" onAction="#btnAnteriorAction" styleClass="botones" text="«" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <GridPane layoutX="589.0" layoutY="3.0" prefHeight="70.0" prefWidth="306.0">
@@ -103,7 +103,7 @@
             <RowConstraints maxHeight="25.59995117187499" minHeight="10.0" prefHeight="15.999975585937506" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#BuscarTabla" prefHeight="30.0" prefWidth="71.0" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#BuscarTabla" prefHeight="42.0" prefWidth="83.0" styleClass="botones" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>

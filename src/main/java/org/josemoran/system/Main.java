@@ -94,10 +94,12 @@ public class Main extends Application{
     }
     
     public void FacturaScene(){
-        
+        FacturasController ftc = cambiarEscena("FacturasView.fxml", 900, 700).getController();
+        ftc.setPrincipal(this);        
     }
     
     public void DetalleScene(){
-        
+        DetalleFacturasController dfc = cambiarEscena("DetalleFacturasView.fxml", 900, 700).getController();
+        dfc.setPrincipal(this); 
     }
 }

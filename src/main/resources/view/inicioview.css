@@ -2,6 +2,33 @@
  * Empty Stylesheet file.
  */
 
-.mainFxmlClass {
-
+.fondo {
+    -fx-background-color: #90AAC5;        
 }
+
+.pane {
+    -fx-background-color: #001f3f;        
+}
+
+.botones {
+    -fx-background-color: #2E6BA9; 
+    -fx-text-fill: white; 
+    -fx-padding: 10px 20px; 
+    -fx-background-radius: 5px; 
+    -fx-border-color: transparent; 
+    -fx-cursor: hand; 
+}
+
+.botones:hover {
+    -fx-background-color: #3B82C4; 
+    -fx-scale-x: 1.02; 
+    -fx-scale-y: 1.02; 
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 0);
+}
+
+.botones:pressed {
+    -fx-background-color: #1F4C7A; 
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
