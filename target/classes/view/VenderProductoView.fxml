@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.josemoran.controller.VenderProductoController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="fondo" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.josemoran.controller.VenderProductoController">
     <stylesheets>
         <URL value="@venderproductoview.css" />
     </stylesheets>
@@ -38,7 +38,7 @@
             <TableColumn fx:id="colProveedor" prefWidth="84.7999267578125" text="IDProveedor" />
          </columns>
       </TableView>
-      <GridPane layoutX="24.0" layoutY="427.0" prefHeight="78.0" prefWidth="868.0">
+      <GridPane layoutX="20.0" layoutY="436.0" prefHeight="78.0" prefWidth="868.0">
          <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="85.19998168945312" minWidth="10.0" prefWidth="44.4" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="155.60000610351562" minWidth="10.0" prefWidth="19.6" />
@@ -69,15 +69,15 @@
             <Button fx:id="btnAnterior" mnemonicParsing="false" onAction="#btnAnteriorAction" styleClass="botones" text="«" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <GridPane layoutX="599.0" layoutY="13.0" prefHeight="70.0" prefWidth="306.0">
+      <GridPane layoutX="596.0" layoutY="3.0" prefHeight="70.0" prefWidth="306.0">
          <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.7999267578125" minWidth="10.0" prefWidth="200.7999267578125" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="107.20001220703125" minWidth="10.0" prefWidth="23.2000732421875" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints maxHeight="25.60001220703125" minHeight="10.0" prefHeight="15.199987792968749" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="61.60001220703125" minHeight="10.0" prefHeight="44.8000244140625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="25.60001220703125" minHeight="0.0" prefHeight="5.9999954223632805" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="61.60001220703125" minHeight="10.0" prefHeight="50.80000457763671" valignment="CENTER" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="25.59995117187499" minHeight="10.0" prefHeight="15.999975585937506" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
@@ -89,7 +89,7 @@
             <TextField fx:id="txtBuscar" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <GridPane layoutX="10.0" layoutY="505.0" prefHeight="151.0" prefWidth="885.0">
+      <GridPane layoutX="10.0" layoutY="514.0" prefHeight="151.0" prefWidth="885.0">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="312.20001220703125" minWidth="10.0" prefWidth="16.600006103515625" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="312.20001220703125" minWidth="10.0" prefWidth="106.19999389648437" />
@@ -105,7 +105,7 @@
         </rowConstraints>
          <children>
             <Button mnemonicParsing="false" onAction="#CompletarVenta" prefHeight="54.0" prefWidth="234.0" styleClass="botones" text="Realizar Venta" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cbxUsu" prefHeight="26.0" prefWidth="172.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cbxUsu" prefHeight="26.0" prefWidth="172.0" styleClass="cbx" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtCantidad" prefHeight="22.0" prefWidth="198.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
