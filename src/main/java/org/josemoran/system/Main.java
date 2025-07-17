@@ -102,4 +102,9 @@ public class Main extends Application{
         DetalleFacturasController dfc = cambiarEscena("DetalleFacturasView.fxml", 900, 700).getController();
         dfc.setPrincipal(this); 
     }
+    
+    public void VenderScene(){
+        VenderProductoController vpd = cambiarEscena("VenderProductoView.fxml", 900, 700).getController();
+        vpd.setPrincipal(this);
+    }
 }

@@ -49,6 +49,10 @@ public class MenuController implements Initializable {
         principal.DetalleScene();
     }
     
+    public void VenderView(){
+        principal.VenderScene();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

@@ -7,6 +7,7 @@ org\josemoran\controller\FacturasController.class
 org\josemoran\controller\DetalleFacturasController.class
 org\josemoran\controller\CategoriasController$EstadoFormulario.class
 org\josemoran\model\Proveedores.class
+org\josemoran\controller\VenderProductoController.class
 org\josemoran\model\Carros.class
 org\josemoran\controller\ProveedoresController.class
 org\josemoran\controller\ProveedoresController$EstadoFormulario.class

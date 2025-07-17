@@ -66,7 +66,7 @@
                </font>
             </Text>
             <Button mnemonicParsing="false" onAction="#Volver" prefHeight="42.0" prefWidth="83.0" styleClass="botones" text="Volver" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onAction="#Volver" prefHeight="36.0" prefWidth="422.0" styleClass="botones" text="Vender" />
+            <Button mnemonicParsing="false" onAction="#VenderView" prefHeight="36.0" prefWidth="422.0" styleClass="botones" text="Vender" />
          </children>
       </GridPane>
    </children>
