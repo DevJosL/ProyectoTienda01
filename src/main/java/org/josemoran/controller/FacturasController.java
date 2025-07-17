@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent; // Se puede eliminar si no se utiliza en ningún método
+import javafx.scene.input.MouseEvent;
 import org.josemoran.model.Factura;
 import org.josemoran.model.Usuarios;
 import java.sql.CallableStatement;
@@ -24,12 +24,10 @@ public class FacturasController {
     @FXML private TableColumn<Factura, Integer> colIdFactura;
     @FXML private TableColumn<Factura, LocalDate> colFecha;
     @FXML private TableColumn<Factura, String> colUsuario;
-    // @FXML private TableColumn<Factura, String> colDireccion; // ¡ELIMINA ESTA LÍNEA!
 
     @FXML private DatePicker dpFecha;
     @FXML private ComboBox<Usuarios> cbUsuarios;
     @FXML private TextField txtBuscar, txtIdFactura;
-    // @FXML private TextField txtDireccion; // ¡ELIMINA ESTA LÍNEA!
     @FXML private Button btnAgregar, btnEditar, btnEliminar, btnGuardar, btnCancelar, btnAnterior, btnSiguiente;
 
     private enum Estado { NUEVO, EDITAR, NINGUNO }
@@ -57,17 +55,6 @@ public class FacturasController {
             facturaSeleccionada = newSel;
             mostrarFactura(facturaSeleccionada);
         });
-
-        // ¡ELIMINA TODO ESTE BLOQUE DE CÓDIGO RELACIONADO CON txtDireccion!
-        /*
-        cbUsuarios.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal != null) {
-                txtDireccion.setText(newVal.getDireccion());
-            } else {
-                txtDireccion.clear();
-            }
-        });
-        */
     }
 
     public void volver() {
@@ -77,7 +64,6 @@ public class FacturasController {
     private void configurarTabla() {
         colIdFactura.setCellValueFactory(new PropertyValueFactory<>("idFactura"));
         colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
-        // ¡ELIMINA ESTA LÍNEA! colDireccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
         colUsuario.setCellValueFactory(cellData -> {
             int idUser = cellData.getValue().getIdUser();
             return new javafx.beans.property.SimpleStringProperty(obtenerNombreUsuario(idUser));
@@ -122,13 +108,10 @@ public class FacturasController {
             CallableStatement cs = Conexion.getInstancia().getConexion().prepareCall("call sp_ListarFacturas();");
             ResultSet rs = cs.executeQuery();
             while (rs.next()) {
-                // Si la clase Factura no tiene propiedad 'direccion' en la BD ni en el modelo,
-                // asegúrate de que el constructor de Factura aquí SÓLO tenga 3 parámetros
                 listaFacturas.add(new Factura(
                     rs.getInt("idFactura"),
                     rs.getDate("fecha"),
                     rs.getInt("idUser")
-                    // ¡ELIMINA ESTA LÍNEA si Factura no tiene direccion! , rs.getString("direccion")
                 ));
             }
             tblFacturas.setItems(listaFacturas);
@@ -142,14 +125,12 @@ public class FacturasController {
         dpFecha.setDisable(!habilitar);
         cbUsuarios.setDisable(!habilitar);
         txtIdFactura.setDisable(true);
-        // ¡ELIMINA ESTA LÍNEA! txtDireccion.setDisable(true);
     }
 
     private void limpiarCampos() {
         txtIdFactura.clear();
         dpFecha.setValue(null);
         cbUsuarios.getSelectionModel().clearSelection();
-        // ¡ELIMINA ESTA LÍNEA! txtDireccion.clear();
     }
 
     private void mostrarFactura(Factura f) {
@@ -159,7 +140,6 @@ public class FacturasController {
             for (Usuarios u : listaUsuarios) {
                 if (u.getIdUser() == f.getIdUser()) {
                     cbUsuarios.getSelectionModel().select(u);
-                    // ¡ELIMINA ESTA LÍNEA! txtDireccion.setText(u.getDireccion());
                     break;
                 }
             }

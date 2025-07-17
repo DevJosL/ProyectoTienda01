@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.josemoran.database.Conexion;
-import org.josemoran.model.*; // Asegúrate de que DetalleFactura, Factura, y Carros estén en este paquete
+import org.josemoran.model.*;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -38,9 +38,7 @@ public class DetalleFacturasController {
     @FXML
     private Button btnAgregar, btnEditar, btnEliminar, btnGuardar, btnCancelar;
 
-    // --- AQUÍ ESTÁ EL CAMBIO CLAVE ---
-    // Reemplaza la línea "throw new UnsupportedOperationException..." con la siguiente:
-    public void setPrincipal(Main principal) { // Cambié 'aThis' por 'principal' para mayor claridad
+    public void setPrincipal(Main principal) {
         this.principal = principal;
     }
 
@@ -74,7 +72,6 @@ public class DetalleFacturasController {
             mostrarDetalle(detalleSeleccionado);
         });
 
-        // Listeners para actualizar subtotal
         cbCarro.setOnAction(e -> actualizarSubtotal());
         spnCantidad.valueProperty().addListener((obs, oldVal, newVal) -> actualizarSubtotal());
     }
@@ -127,8 +124,6 @@ public class DetalleFacturasController {
         try (CallableStatement cs = Conexion.getInstancia().getConexion().prepareCall("call sp_ListarFacturas();")) {
             ResultSet rs = cs.executeQuery();
             while (rs.next()) {
-                // Asegúrate de que el constructor de Factura aquí coincida con lo que el SP devuelve
-                // Ya lo habíamos ajustado para FacturasController, así que debería estar bien aquí también
                 listaFacturas.add(new Factura(rs.getInt("idFactura"), rs.getDate("fecha"), rs.getInt("idUser")));
             }
             cbFactura.setItems(listaFacturas);
@@ -142,7 +137,6 @@ public class DetalleFacturasController {
         try (CallableStatement cs = Conexion.getInstancia().getConexion().prepareCall("call sp_ListarCarros();")) {
             ResultSet rs = cs.executeQuery();
             while (rs.next()) {
-                // Asegúrate de que el constructor de Carros tenga exactamente los parámetros que tu SP_ListarCarros devuelve
                 listaCarros.add(new Carros(
                         rs.getInt("idCarro"), rs.getString("marca"), rs.getString("modelo"),
                         rs.getString("color"), rs.getString("descripcion"),
@@ -160,7 +154,6 @@ public class DetalleFacturasController {
         try (CallableStatement cs = Conexion.getInstancia().getConexion().prepareCall("call sp_ListarDetalles();")) {
             ResultSet rs = cs.executeQuery();
             while (rs.next()) {
-                // Asegúrate de que el constructor de DetalleFactura tenga los parámetros que tu SP_ListarDetalles devuelve
                 listaDetalles.add(new DetalleFactura(
                         rs.getInt("idDetalle"),
                         rs.getInt("idFactura"),
@@ -206,8 +199,6 @@ public class DetalleFacturasController {
         int index = tblDetalles.getSelectionModel().getSelectedIndex();
         if (index > 0) {
             tblDetalles.getSelectionModel().select(index - 1);
-            // No necesitas cargarFacturas() aquí a menos que las facturas puedan cambiar durante la navegación
-            // cargarFacturas(); 
         }
     }
 
@@ -216,8 +207,6 @@ public class DetalleFacturasController {
         int index = tblDetalles.getSelectionModel().getSelectedIndex();
         if (index < tblDetalles.getItems().size() - 1) {
             tblDetalles.getSelectionModel().select(index + 1);
-            // No necesitas cargarFacturas() aquí a menos que las facturas puedan cambiar durante la navegación
-            // cargarFacturas();
         }
     }
 
@@ -259,7 +248,6 @@ public class DetalleFacturasController {
         int cantidad = spnCantidad.getValue();
 
         if (factura == null || carro == null || cantidad <= 0) {
-            // Opcional: mostrar un mensaje de alerta al usuario
             Alert alert = new Alert(Alert.AlertType.WARNING, "Por favor, complete todos los campos requeridos (Factura, Carro, Cantidad).");
             alert.showAndWait();
             return;

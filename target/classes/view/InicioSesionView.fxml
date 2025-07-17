@@ -31,6 +31,26 @@
                   <Font size="19.0" />
                </font>
             </Text>
+            <Text fill="WHITE" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Quieres iniciar como admin?">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo: **">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña: *">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fill="#8c7f7f" layoutX="255.0" layoutY="563.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Nada especial como admin solo acceso rapido al menú" wrappingWidth="148.95758056640625">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
       <Text layoutX="514.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INICIO SESIÓN">

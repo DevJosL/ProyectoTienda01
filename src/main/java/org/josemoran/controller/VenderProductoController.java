@@ -259,7 +259,7 @@ public class VenderProductoController implements Initializable {
                 System.out.println("IDFactura no encontrada");
             } else {
                 //Se ejecutara el metodo AgregarDetalle y lanzara un ALERT de tipo CONFIRMATION
-                //para 
+                //para avisar de la realización de la venta.
                 AgregarDetalle();
                 Alert confirmacionCr = new Alert(Alert.AlertType.CONFIRMATION);
                 confirmacionCr.setTitle("¡CREADO!");

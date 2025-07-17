@@ -315,7 +315,7 @@ public class CarrosController implements Initializable {
     @FXML
     private void btnNuevoAction() {
         limpiarFormulario();
-        estadoActual = EstadoFormulario.AGREGAR;  // <- Esto es clave
+        estadoActual = EstadoFormulario.AGREGAR;
         estadoFormulario(EstadoFormulario.AGREGAR);
     }
 

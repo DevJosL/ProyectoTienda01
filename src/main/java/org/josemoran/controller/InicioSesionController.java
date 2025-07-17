@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package org.josemoran.controller;
 
 import java.net.URL;
@@ -49,8 +45,9 @@ public class InicioSesionController implements Initializable {
     }
 
     public void ingresar() {
-
         try {
+            //Se hara una comprobación con un SP de la DB donde verificara si "Correo" y "Contraseña"
+            //existan dentro de la DB
             CallableStatement enunciado = Conexion.getInstancia().getConexion()
                     .prepareCall("call sp_loginUsuario(?,?);");
             enunciado.setString(1, txtCorreo.getText());
@@ -73,7 +70,14 @@ public class InicioSesionController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //Expresion lambda runLater (Funciona luego de cargar toda la escena) donde al entrar a esta escena se seleccionara el campo correo.
         Platform.runLater(() -> txtCorreo.requestFocus());
+        
+        //Desde el textField correo se podra dar enter para pasar al siguiente requisito
+        txtCorreo.setOnAction(eh -> pssContraseña.requestFocus());
+        
+        //Desde el PasswordField contraseña se podra dar enter para ingresar al menú
+        pssContraseña.setOnAction(eh -> ingresar());
     }
 
 }

@@ -20,8 +20,8 @@
          <columns>
             <TableColumn fx:id="colIdDetalle" text="IDDetalle" />
             <TableColumn fx:id="colFactura" prefWidth="94.4000473022461" text="IDFactura" />
-            <TableColumn fx:id="colCarro" prefWidth="66.4000244140625" text="IDCarro" />
-            <TableColumn fx:id="colCantidad" prefWidth="286.3999938964844" text="Cantidad" />
+            <TableColumn fx:id="colCarro" prefWidth="276.79998779296875" text="IDCarro" />
+            <TableColumn fx:id="colCantidad" prefWidth="76.80007934570312" text="Cantidad" />
             <TableColumn fx:id="colSubtotal" prefWidth="297.60009765625" text="Subtotal" />
          </columns>
       </TableView>
